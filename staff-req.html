@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قوانين الموقع</title>
+    <title>التقديم على الإدارة - NASA</title>
     <link rel="icon" href="nasa.png" type="image/x-icon">
-    <!-- تضمين خط Cairo من Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    
+
+    <!-- تضمين خط Poppins من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <!-- تضمين مكتبة Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- تضمين مكتبة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -22,43 +22,40 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', sans-serif; 
+            font-family: 'Poppins', sans-serif;
             direction: rtl;
-            background-color: #293241; 
+            background-color: #1E272E;
             color: #fff;
-            min-height: 100vh; 
-            position: relative; 
+            min-height: 100vh;
+            position: relative;
         }
 
         header {
-            background-color: #1E272E; 
-            color: #fff;
-            padding: 20px;
+            background-color: transparent;
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            left: 0;
+            position: fixed;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease; 
+            transition: background-color 0.5s ease;
         }
 
-        header:hover {
-            background-color: #2C3A47; 
+        header.scrolled {
+            background-color: rgba(30, 39, 46, 0.8);
         }
 
         .logo {
-            font-size: 2em;
-            font-weight: bold;
-            color: #2264ce;
-            transition: transform 0.3s ease; 
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #FFD700;
+            transition: transform 0.3s ease;
         }
 
         .logo:hover {
-            transform: scale(1.1); 
+            transform: scale(1.2);
         }
 
         nav ul {
@@ -66,75 +63,102 @@
             padding: 0;
             margin: 0;
             display: flex;
+            align-items: center;
         }
 
         nav ul li {
-            margin-right: 30px;
+            margin-left: 30px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #fff;
-            font-size: 1.2em;
-            padding: 15px;
+            font-size: 1.1em;
+            padding: 10px 15px;
             transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: #3A4C5B; 
-            border-radius: 4px;
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
         }
 
-        nav ul li a.active {
-            font-weight: bold;
+        .dropdown-menu {
+            background-color: #1E272E;
+            border: none;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #FFD700;
         }
 
         main {
-            margin-top: 120px; 
+            margin-top: 100px;
             padding: 20px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 3em;
-            color: #0160fe;
-            text-align: center;
-            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #FFD700;
         }
 
         .rule-card {
             background-color: #37474F;
-            border: none; 
-            margin-bottom: 30px; 
-            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75); 
+            border: none;
+            margin: auto;
             padding: 20px;
-            transition: transform 0.3s ease; 
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
+            width: 90%;
+            max-width: 600px;
         }
 
-        .rule-card:hover {
-            transform: scale(1.05); 
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        .rule-title {
-            color: #fff; 
-            font-size: 1.8em;
-            margin-bottom: 10px;
+        .form-control {
+            background-color: #1E272E;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 5px;
         }
 
-        .rule-text {
-            color: #ccc; 
-            font-size: 1.2em;
+        .form-control::placeholder {
+            color: #888;
+        }
+
+        .btn-primary {
+            background-color: #FFD700;
+            border: none;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #FFC107;
+            color: #000;
         }
 
         footer {
-            background-color: #1E272E; 
+            background-color: #1E272E;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: sticky;
+            position: fixed;
             bottom: 0;
-            left: 0; 
-            right: 0; 
+            left: 0;
+            right: 0;
             width: 100%;
             z-index: 1000;
         }
@@ -146,7 +170,7 @@
         }
 
         footer p a {
-            color: #0160fe;
+            color: #FFD700;
             text-decoration: none;
         }
 
@@ -157,7 +181,7 @@
 </head>
 <body>
 
-    <header>
+    <header id="header">
         <div class="logo">
             NASA
         </div>
@@ -165,65 +189,87 @@
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="we.html">من نحن</a></li>
-                <li><a href="rules.html"class="active">قوانين</a></li>
-				<li><a href="shop.html">المتجر</a></li>
-				 <!-- إضافة القائمة الجديدة -->
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    قائمة التقديم
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">وظائف</a></li>
-                    <li><a class="dropdown-item" href="#">اداره</a></li>
-                    <li><a class="dropdown-item" href="#">رؤساء</a></li>
+                <li><a href="rules.html">قوانين</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" role="button" id="navbarDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
+                        المتجر
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <li><a class="dropdown-item" href="cars-shop.html">سيارات</a></li>
+                        <li><a class="dropdown-item" href="factions-shop.html">فاكشنات</a></li>
+                        <li><a class="dropdown-item" href="packges-shop.html">بكجات</a></li>
+                        <li><a class="dropdown-item" href="money+gc-shop.html">فلوس + عملات ذهبية</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" role="button" id="navbarDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+                        قائمة التقديم
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <li><a class="dropdown-item" href="tkdem.html">إدارة</a></li>
+                        <li><a class="dropdown-item" href="#">وظائف</a></li>
+                        <li><a class="dropdown-item" href="#">رؤساء</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
-    
-    <main class="container">
-        <h1>التقديم على الادارة + شروط التقديم</h1>
-        
-		
-		<div class="rule-card animate__animated animate__fadeInLeft">
-           <center> <h2 class="rule-title"><i class=""></i>رابط التقديم على الادارة.</h2>  
-            <p class="rule-text">لدخول على اسألة الاختبار الرجاء اضغط على كلمة تقديم</p>
-			<center>
-        </div>
-		<br>
-		<br>
+
+    <main>
+        <h1>التقديم على الإدارة</h1>
         <div class="rule-card animate__animated animate__fadeInLeft">
-            <h2 class="rule-title"><i class="fas fa-user-shield"></i> الشرط الاول</h2>
-            <p class="rule-text">يجب ان يكون عمرك فوق ال13 سنة.</p>
-        </div>
-
-        <div class="rule-card animate__animated animate__fadeInRight">
-            <h2 class="rule-title"><i class="fas fa-user-shield"></i> الشرط الثاني</h2>
-            <p class="rule-text">المدة التي كنت تلعب فيها mta تفوق ال3 اشهر</p>
-        </div>
-
-        <div class="rule-card animate__animated animate__fadeInLeft">
-            <h2 class="rule-title"><i class="fas fa-user-shield"></i>الشرط الثالث</h2>
-            <p class="rule-text"> معرفة كافة الاوامر الإدارية التي تتعلق ب(الفاكشنات, السيارات, الانتروهات, واوامر عامة).</p>
-        </div>
-
-        <div class="rule-card animate__animated animate__fadeInRight">
-            <h2 class="rule-title"><i class="fas fa-user-shield"></i> الشرط الرابع</h2>
-            <p class="rule-text">خبرة في الرول بلاي.</p>
-        </div>
-		
-		<div class="rule-card animate__animated animate__fadeInRight">
-            <h2 class="rule-title"><i class="fas fa-user-shield"></i> الشرط الخامس</h2>
-            <p class="rule-text"> التفاعل في الخادم.</p>
+            <div class="form-group">
+                <input type="text" id="username" class="form-control" placeholder="اسم حسابك ف الديسكورد" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="number" class="form-control" placeholder="ايديهك ديسكورد" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="name" class="form-control" placeholder="اسمك الحقيقي" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="age" class="form-control" placeholder="عمرك الحقيقي" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="knt" class="form-control" placeholder="هل كنت اداري في سيرفر اخر ؟" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="km" class="form-control" placeholder="كم هيا مدة تفاعلك في اليوم ؟" required>
+            </div>
+            <br>
+            <h2 class="rule-title">اسئلة القوانين</h2>
+            <br>
+            <div class="form-group">
+                <input type="text" id="Pg" class="form-control" placeholder="عرف ما هو قانون ال PG">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text" id="Gr" class="form-control" placeholder="عرف ما هو قانون ال GR">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text" id="Mg" class="form-control" placeholder="عرف ما هو قانون ال MG">
+            </div>
+            <br>
+            <button id="submitBtn" class="btn btn-primary">ارسال الطلب</button>
         </div>
     </main>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2024 | تصميم بواسطة <a href=>Nasa Rp</a></p>
+        <p>جميع الحقوق محفوظة &copy; 2024 | تصميم بواسطة <a href="#">Nasa Rp</a></p>
     </footer>
 
-    <!-- تضمين مكتبة Bootstrap اللازمة -->
+    <!-- تضمين مكتبة Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- تضمين مكتبة Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        window.onscroll = function() {
+            const header = document.getElementById('header');
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+    </script>
 </body>
 </html>
